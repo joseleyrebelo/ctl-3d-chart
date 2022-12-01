@@ -1,0 +1,7 @@
+.ctl-input {
+  @apply border border-slate-300 rounded-md px-2 py-1 placeholder-slate-400;
+}
+
+.ctl-button {
+  @apply bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-md px-2 py-1;
+}
