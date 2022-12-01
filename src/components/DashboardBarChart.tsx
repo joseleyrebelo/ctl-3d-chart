@@ -40,7 +40,22 @@ class DashboardBarChart extends React.Component<Props> {
         },
       ],
     };
-    return <Bar data={chartData} />;
+    return (
+      <Bar
+        data={chartData}
+        options={{
+          indexAxis: "y",
+          scales: {
+            x: {
+              display: false,
+            },
+            y: {
+              display: false,
+            },
+          },
+        }}
+      />
+    );
   }
 }
 
