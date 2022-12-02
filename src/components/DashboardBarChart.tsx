@@ -36,7 +36,9 @@ class DashboardBarChart extends React.Component<Props> {
       labels: Object.values(this.props.attributes).map(({ name }) => name),
       datasets: [
         {
+          label: "My dataset",
           data: Object.values(this.props.attributes).map(({ value }) => value),
+          backgroundColor: "#9BD0F5",
         },
       ],
     };

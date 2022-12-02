@@ -1,7 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { NavigateFunction } from "react-router-dom";
+import { withNavigation } from "../util/withNavigation";
 
-type Props = {};
+type Props = {
+  navigate: NavigateFunction;
+};
 type State = {
   username: string;
   password: string;
@@ -35,8 +38,7 @@ class Login extends React.Component<Props, State> {
   }
   signIn = () => {
     if (this.state.isFormValid) {
-      let navigate = useNavigate();
-      navigate("/dashboard");
+      this.props.navigate("/dashboard");
     }
   };
   render() {
@@ -44,7 +46,7 @@ class Login extends React.Component<Props, State> {
       <div className="ctl-userArea__holder">
         <div className="ctl-userArea__container ">
           <div className="flex flex-col gap-4">
-            <h1 className="text-4xl">Welcome back,</h1>
+            <h1 className="text-4xl font-title font-bold">Welcome back,</h1>
             <p>Please insert your user credentials</p>
             <input
               placeholder="username"
@@ -76,4 +78,4 @@ class Login extends React.Component<Props, State> {
   }
 }
 
-export default Login;
+export default withNavigation(Login);

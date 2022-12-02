@@ -26,10 +26,10 @@ class DashboardHeader extends React.Component<Props, State> {
     const { title, attributes } = this.props.data[this.state.currentIndex];
     return (
       <div>
-        <h1 className="text-2xl mb-5">{title}</h1>
+        <h1 className="text-2xl mb-5 font-title font-bold">{title}</h1>
         {attributes && (
-          <div className="grid grid-cols-2  gap-10">
-            <div className="cols-span-2 lg:cols-span-1 border border-slate-100 p-5 rounded-lg">
+          <div className="grid grid-cols-2 gap-10">
+            <div className="col-span-2 xs:col-span-1 border border-slate-100 p-5 rounded-lg">
               <table width="100%">
                 <thead className="text-left">
                   <th>Name</th>
@@ -45,7 +45,7 @@ class DashboardHeader extends React.Component<Props, State> {
                 ))}
               </table>
             </div>
-            <div className="cols-span-2 lg:cols-span-1">
+            <div className="col-span-2 xs:col-span-1">
               <DashboardBarChart attributes={attributes} />
             </div>
           </div>
